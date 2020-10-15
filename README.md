@@ -22,3 +22,33 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## usersテーブル
+
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| name     | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
+
+### Association
+
+- has_many :items
+
+## itemsテーブル
+
+| Column        | Type    | Options     |
+| ------------- | ------- | ----------- |
+| name          | string  | null: false |
+| author        | string  | null: false |
+| publish_day   | date    | null: false |
+| stock         | integer | null: false |
+| genre_id      | integer | null: false |
+| code_id       | integer | null: false |
+| publisher_id  | integer | null: false |
+| condition_id  | integer | null: false |
+| remarks       | text    |             |
+
+## Association
+
+- belongs_to :user
