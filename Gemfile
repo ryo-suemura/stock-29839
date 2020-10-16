@@ -59,3 +59,4 @@ group :prodiction do
 end
 
 gem 'devise'
+gem 'active_hash'
