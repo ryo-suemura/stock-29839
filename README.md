@@ -47,7 +47,7 @@ Things you may want to cover:
 | code_id       | integer | null: false |
 | publisher_id  | integer | null: false |
 | condition_id  | integer | null: false |
-| remarks       | text    |             |
+| remark        | text    |             |
 
 ## Association
 
