@@ -5,10 +5,10 @@ class CreateStocks < ActiveRecord::Migration[6.0]
       t.string :author,              null: false
       t.date :publish_day,           null: false
       t.integer :stock,              null: false
-      t.integer :genre_id,           null: false
+      t.integer :genre,              null: false
       t.integer :code_id,            null: false
       t.integer :publisher_id,       null: false
-      t.integer :condition_id,       null: false
+      t.integer :condition,          null: false
       t.text :remark
       t.timestamps
     end

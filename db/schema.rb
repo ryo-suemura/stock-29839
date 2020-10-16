@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 2020_10_16_071308) do
     t.string "author", null: false
     t.date "publish_day", null: false
     t.integer "stock", null: false
-    t.integer "genre_id", null: false
+    t.integer "genre", null: false
     t.integer "code_id", null: false
     t.integer "publisher_id", null: false
-    t.integer "condition_id", null: false
+    t.integer "condition", null: false
     t.text "remark"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
