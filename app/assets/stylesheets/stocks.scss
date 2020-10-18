@@ -35,11 +35,32 @@ a {
   height: 100%;
 }
 
-.main {
+.main-bar {
   background-color: whitesmoke;
   width: 100vw;
   height: calc(100vh - 200px);
 }
+
+.stock-content {
+  padding: 50px;
+}
+
+.stock-name {
+  margin-bottom: 50px;
+  font-size: 30px;
+}
+
+table, th, td{
+  border: 1px solid black;
+  width: 80%;
+  table-layout: fixed;
+}
+
+th {
+  font-size: 20px;
+  padding: 5px;
+}
+
 
 .footer-bar {
   background-color: gray;
