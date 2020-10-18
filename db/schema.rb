@@ -13,17 +13,17 @@
 ActiveRecord::Schema.define(version: 2020_10_16_071308) do
 
   create_table "stocks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "number", null: false
     t.string "name", null: false
     t.string "author", null: false
-    t.date "publish_day", null: false
     t.integer "stock", null: false
-    t.integer "genre", null: false
+    t.integer "genre_id", null: false
     t.integer "code_id", null: false
     t.integer "publisher_id", null: false
-    t.integer "condition", null: false
-    t.text "remark"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_stocks_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -39,4 +39,5 @@ ActiveRecord::Schema.define(version: 2020_10_16_071308) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "stocks", "users"
 end
