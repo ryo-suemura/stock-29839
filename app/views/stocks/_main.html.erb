@@ -1,0 +1,35 @@
+<div class="stock-content">
+  <div class="stock-name">
+    <h1>商品在庫一覧</h1>
+  </div>
+  <table>
+    <thead class="table-head">
+      <tr>
+        <th>商品番号</th>
+        <th>商品名</th>
+        <th>著者</th>
+        <th>個数</th>
+        <th>種類</th>
+        <th>ジャンル</th>
+        <th>出版社</th>
+        <th>発注者</th>
+        <th>発注日時</th>
+      </tr>
+    </thead>
+    <%= @stocks.each do |stock| %>
+      <tbody class="table-body">
+        <tr>
+          <td><%= stock.number %></td>
+          <td><%= stock.name %></td>
+          <td><%= stock.author %></td>
+          <td><%= stock.stock %></td>
+          <td><%= stock.genre %></td>
+          <td><%= stock.code %></td>
+          <td><%= stock.publisher %></td>
+          <td><%= @user.name %></td>
+          <td><%= stock.created_at %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+</div>

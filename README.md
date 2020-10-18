@@ -37,17 +37,17 @@ Things you may want to cover:
 
 ## itemsテーブル
 
-| Column        | Type    | Options     |
-| ------------- | ------- | ----------- |
-| name          | string  | null: false |
-| author        | string  | null: false |
-| publish_day   | date    | null: false |
-| stock         | integer | null: false |
-| genre_id      | integer | null: false |
-| code_id       | integer | null: false |
-| publisher_id  | integer | null: false |
-| condition_id  | integer | null: false |
-| remarks       | text    |             |
+| Column        | Type       | Options           |
+| ------------- | ---------- | ----------------- |
+| number        | integer    | null: false       |
+| name          | string     | null: false       |
+| author        | string     | null: false       |
+| stock         | integer    | null: false       |
+| genre_id      | integer    | null: false       |
+| code_id       | integer    | null: false       |
+| publisher_id  | integer    | null: false       |
+| user          | references | foreign_key: true |
+
 
 ## Association
 
