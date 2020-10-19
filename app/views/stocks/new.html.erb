@@ -1,7 +1,7 @@
 <div class="contents row">
   <div class="container">
     <h1>商品を追加する</h1>
-    <%= form_with(model: @tweet, local: true) do |form| %>
+      <%= form_with model: @stock, url: stocks_path(:stock_params), local: true do |form| %>
       <div class="item-detail"> 
         <div class="form-name"> 
           商品番号

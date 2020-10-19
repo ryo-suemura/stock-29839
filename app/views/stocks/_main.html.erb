@@ -16,17 +16,17 @@
         <th>発注日時</th>
       </tr>
     </thead>
-    <%= @stocks.each do |stock| %>
+    <% @stocks.each do |stock| %>
       <tbody class="table-body">
         <tr>
           <td><%= stock.number %></td>
           <td><%= stock.name %></td>
           <td><%= stock.author %></td>
           <td><%= stock.stock %></td>
-          <td><%= stock.genre %></td>
-          <td><%= stock.code %></td>
-          <td><%= stock.publisher %></td>
-          <td><%= @user.name %></td>
+          <td><%= stock.genre.name %></td>
+          <td><%= stock.code.name %></td>
+          <td><%= stock.publisher.name %></td>
+          <td><%#= stock.user.name %></td>
           <td><%= stock.created_at %></td>
         </tr>
       </tbody>

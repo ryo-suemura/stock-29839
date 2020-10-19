@@ -56,8 +56,13 @@ a {
 
 table, th, td{
   border: 1px solid black;
-  width: 80%;
+  width: 90%;
   table-layout: fixed;
+}
+
+td {
+ text-align: center; 
+ 
 }
 
 th {
