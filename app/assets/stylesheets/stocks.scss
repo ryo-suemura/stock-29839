@@ -11,6 +11,8 @@ a {
   height: 100%;
 }
 
+// headerのCSS
+
 .header-bar {
   background-color: gray;
   width: 100vw;
@@ -34,6 +36,8 @@ a {
   width: 90%;
   height: 100%;
 }
+
+// mainのCSS
 
 .main-bar {
   background-color: whitesmoke;
@@ -61,6 +65,7 @@ th {
   padding: 5px;
 }
 
+// footerのCSS
 
 .footer-bar {
   background-color: gray;
@@ -83,4 +88,35 @@ th {
 
 table {
 
+}
+
+// 商品追加ページ
+
+.container h1 {
+  font-size: x-large;
+  text-align: center;
+}
+
+.item-detail {
+  margin: 50px;
+}
+
+.form-name {
+  margin: 20px 0 10px 0;
+}
+
+.container {
+  margin: 50px 100px;
+  text-align: center;
+}
+
+.form-name {
+  font-weight: bold;
+}
+
+
+.dispensable {
+  color: red;
+  background-color: whitesmoke;
+  padding: 5px;
 }
