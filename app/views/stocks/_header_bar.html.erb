@@ -2,7 +2,7 @@
 <div class="header-left">
   <div class="header-name">
     <div class="icon">
-      お店の在庫
+      在庫管理
     </div>
   </div>
 </div>
@@ -10,13 +10,13 @@
 <div class="header-right">
   <ul class="header-menu">
     <li class="menu-list">
-      <a href="#">在庫</a>
+      <a href="#">在庫一覧</a>
     </li>
     <li class="menu-list">
-      <a href="#">データ</a>
+      <a href="#">データを見る</a>
     </li>
     <li class="menu-list">
-      <a href="#">追加</a>
+      <%= link_to "商品を追加", new_stock_path %>    
     </li>
      <li class="menu-list">
       <%= link_to current_user.name, edit_user_path(current_user) %>      
