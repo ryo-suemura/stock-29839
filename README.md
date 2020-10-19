@@ -34,8 +34,9 @@ Things you may want to cover:
 ### Association
 
 - has_many :items
+- has_many :purchases
 
-## itemsテーブル
+## stocksテーブル
 
 | Column        | Type       | Options           |
 | ------------- | ---------- | ----------------- |
@@ -52,3 +53,17 @@ Things you may want to cover:
 ## Association
 
 - belongs_to :user
+- belongs_to :purchases
+
+
+## purchasesテーブル
+
+| Column          | Type       | Option                         |
+| --------------- | ---------- | ------------------------------ |
+| item_id         | integer    | null: false, foreign_key: true |
+| user_id         | integer    | null: false, foreign_key: true |
+
+## Association
+
+- belong_to :user
+- has_many :stocks
