@@ -5,8 +5,8 @@ class Stock < ApplicationRecord
   belongs_to_active_hash :publisher
   belongs_to_active_hash :genre
 
-  with_options presence: true do
-    validates :number, :name, :author, :stock, :genre_id, :code_id, :publisher_id,  presence: true
+  with_options presence: true do 
+    validates :number, :stock, numericality: { with: /\A[0-9]+\z/ }
     validates :code_id, :publisher_id, :genre_id, numericality: { other_than: 1 }
   end
   

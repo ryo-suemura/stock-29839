@@ -56,27 +56,26 @@ a {
 
 table, th, td{
   border: 1px solid black;
-  width: 90%;
+  width: 80%;
   table-layout: fixed;
+}
+
+table {
+  float: left;
 }
 
 td {
  text-align: center; 
- 
+ font-size: 15px;
 }
 
 th {
   font-size: 20px;
   padding: 5px;
+  
 }
 
-// footerのCSS
 
-.footer-bar {
-  background-color: gray;
-  width: 100vw;
-  height: 100px;
-}
 
 .header-menu {
   list-style: none;

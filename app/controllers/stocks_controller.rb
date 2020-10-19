@@ -9,7 +9,12 @@ class StocksController < ApplicationController
   end
 
   def create
-    Stock.create(stock_params)
+    @stock = Stock.new(stock_params)
+    if @stock.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
