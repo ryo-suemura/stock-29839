@@ -47,6 +47,7 @@ a {
 
 .stock-content {
   padding: 50px;
+
 }
 
 .stock-name {
@@ -55,24 +56,38 @@ a {
 }
 
 table, th, td{
-  border: 1px solid black;
-  width: 80%;
-  table-layout: fixed;
+  border-bottom: 1px solid black;
+  width: 100%;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 table {
-  float: left;
+  table-layout: fixed;
 }
 
 td {
  text-align: center; 
  font-size: 15px;
+ padding: 10px;
 }
 
 th {
   font-size: 20px;
   padding: 5px;
+  background-color: silver;
   
+}
+
+.select {
+  border-bottom:1px solid black;
+  background-color: whitesmoke;
+}
+
+.select-btn {
+  margin-left: 5px;
+  border-bottom:1px solid black;
+  font-weight: bold;
 }
 
 
