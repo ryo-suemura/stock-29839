@@ -6,10 +6,12 @@ class PurchasesController < ApplicationController
   end
  
   def create
-    @purchase = Purchase.new(purchase_params)
-    if @purchase.save
+    @purchase = Purchase.create(purchase_params)
+    if @purchase.save && @stock.stock > 0
       @stock.decrement!(:stock, @purchase.quantity)
       redirect_to root_path
+    elsif @purchase.quantity == 0
+      render :new
     else
       render :new
     end
@@ -18,10 +20,10 @@ class PurchasesController < ApplicationController
   private
 
   def setting
-    #@stock = Stock.find(params[:stock_id])
+    @stock = Stock.find(params[:stock_id])
   end
 
   def purchase_params
-    params.require(:purchase).permit(:quantity).merge(user_id: current_user.id, stock_id: @purchase.stock)
+    params.permit(:quantity).merge(stock_id: params[:stock_id], user_id: current_user.id)
   end
 end

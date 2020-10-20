@@ -18,6 +18,6 @@ class StocksController < ApplicationController
 
   private
   def stock_params
-    params.require(:stock).permit(:number, :name, :author, :stock, :genre_id, :code_id, :publisher_id, :user_id).merge(user_id: current_user.id)
+    params.require(:stock).permit(:number, :name, :author, :stock, :genre_id, :code_id, :publisher_id).merge(user_id: current_user.id)
   end
 end
