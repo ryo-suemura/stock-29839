@@ -53,7 +53,7 @@ Things you may want to cover:
 ## Association
 
 - belongs_to :user
-- belongs_to :purchases
+- has_one :purchase
 
 
 ## purchasesテーブル
@@ -66,5 +66,20 @@ Things you may want to cover:
 
 ## Association
 
-- belong_to :user
-- has_many :stocks
+- belongs_to :user
+- belongs_to :stock
+
+
+## ordersテーブル
+
+| Column          | Type       | Option                         |
+| --------------- | ---------- | ------------------------------ |
+| quantity        | integer    | null: false                    |
+| item_id         | integer    | null: false, foreign_key: true |
+| user_id         | integer    | null: false, foreign_key: true |
+
+## Association
+
+- belongs_to :user
+- belongs_to :stock
+
