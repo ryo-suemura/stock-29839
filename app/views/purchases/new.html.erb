@@ -1,0 +1,10 @@
+
+<div class="contents row">
+  <div class="container">
+    <h3>売れた</h3>
+    <%= form_with(model: @purchase, local: true) do |form| %>
+      <%= form.number_field :quantity, placeholder: "いくつ売りましたか" %>
+      <%= form.submit "計上する" %>
+    <% end %>
+  </div>
+</div>
