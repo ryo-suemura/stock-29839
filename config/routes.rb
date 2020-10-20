@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :stocks, only: [:index, :new, :create] do
     resources :purchases, only: [:new, :create]
+    resources :orders, only: [:new, :create]
   end
 end
