@@ -2,7 +2,7 @@
   <div class="container">
     <h1>商品を追加する</h1>
     <%#= render 'stocks/error_messages', model: f.object %> 
-      <%= form_with model: @stock, url: stocks_path(:stock_params), local: true do |form| %>
+      <%= form_with model: @stock, url: stocks_path, local: true do |form| %>
       <div class="item-detail"> 
         <div class="form-name"> 
           商品番号
