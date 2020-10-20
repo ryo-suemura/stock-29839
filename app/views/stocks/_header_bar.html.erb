@@ -10,16 +10,16 @@
 <div class="header-right">
   <ul class="header-menu">
     <li class="menu-list">
-      <a href="#">在庫一覧</a>
+      <%= link_to "在庫一覧", root_path, class: 'btn'%>    
     </li>
     <li class="menu-list">
-      <a href="#">データを見る</a>
+      <%= link_to "発注履歴", '#', method: :delete, class: 'btn'%>    
     </li>
     <li class="menu-list">
-      <%= link_to "商品を追加", new_stock_path %>    
+      <%= link_to "商品を追加", new_stock_path, class: 'btn' %>    
     </li>
      <li class="menu-list">
-      <%= link_to current_user.name, edit_user_path(current_user) %>      
+      <%= link_to current_user.name, edit_user_path(current_user), class: 'btn' %>      
     </li>
     <li class="menu-list">
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>         
