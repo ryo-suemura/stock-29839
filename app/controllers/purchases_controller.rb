@@ -18,7 +18,7 @@ class PurchasesController < ApplicationController
   private
 
   def setting
-    @stock = Stock.find(params[:stock_id])
+    #@stock = Stock.find(params[:stock_id])
   end
 
   def purchase_params
