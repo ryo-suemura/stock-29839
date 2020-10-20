@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: "stocks#index"
   resources :users, only: [:edit, :update]
   resources :stocks, only: [:index, :new, :create]
-  resources :purchases, only: [:create]
+  resources :purchases, only: [:new, :create]
 end
