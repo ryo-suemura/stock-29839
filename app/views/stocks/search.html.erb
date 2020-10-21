@@ -8,7 +8,7 @@
         <h1>商品在庫一覧</h1>
       </div>
       <div class="stock-search">
-        <%= form_with url: search_stocks_path, local: true, method: :get, class: "search-form" do |form|  %>
+        <%= form_with  url: search_stocks_path, local: true, method: :get, class: "search-form" do |form|  %>
           <%= form.text_field :keyword, placeholder: "在庫を検索する", class: "search-input" %>
           <%= form.submit "検索", class: "search-btn" %>
         <% end %>
@@ -28,7 +28,7 @@
             <th class="select"></th>
           </tr>
         </thead>
-          <%= render "item" %>
+         <%= render "item" %>
         </table>
     </div>
   </div>
