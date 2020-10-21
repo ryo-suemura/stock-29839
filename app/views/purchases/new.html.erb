@@ -1,10 +1,12 @@
-
-<div class="contents row">
-  <div class="container">
-    <h3>売った数</h3>
-    <%= form_with model: @purchases, url:stock_purchases_path, local: true do |form| %>
-      <%= form.number_field :quantity, min: 1, max: @stock.stock %>
-      <%= form.submit "計上する" %>
-    <% end %>
+  <div class= "header-bar">
+    <%= render "stocks/header_bar" %>
   </div>
-</div>
+  <div class="contents row">
+    <div class="container">
+      <h3>売った数</h3>
+      <%= form_with model: @purchases, url:stock_purchases_path, local: true do |form| %>
+        <%= form.number_field :quantity, min: 1, max: @stock.stock %>
+        <%= form.submit "計上する" %>
+      <% end %>
+    </div>
+  </div>
