@@ -16,6 +16,10 @@ class StocksController < ApplicationController
     end
   end
 
+  def search
+    @stocks = Stock.search(params[:keyword])
+  end
+
   private
   def stock_params
     params.require(:stock).permit(:number, :name, :author, :stock, :genre_id, :code_id, :publisher_id).merge(user_id: current_user.id)

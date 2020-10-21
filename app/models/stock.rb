@@ -10,5 +10,13 @@ class Stock < ApplicationRecord
     validates :number, :stock, numericality: { with: /\A[0-9]+\z/ }
     validates :code_id, :publisher_id, :genre_id, numericality: { other_than: 1 }
   end
+
+  def self.search(search)
+    if search != ""
+      Stock.where('number LIKE(?) OR name LIKE ?', "%#{search}%", "%#{search}%")
+    else
+      Stock.all
+    end
+  end
   
 end
