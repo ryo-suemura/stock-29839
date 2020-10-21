@@ -13,7 +13,7 @@ class Stock < ApplicationRecord
 
   def self.search(search)
     if search != ""
-      Stock.where('number LIKE(?) OR name LIKE ?', "%#{search}%", "%#{search}%")
+      Stock.where('number LIKE(?) OR name LIKE(?) OR  author LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%")
     else
       Stock.all
     end
