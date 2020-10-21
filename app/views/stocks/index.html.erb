@@ -16,13 +16,13 @@
       <table>
         <thead class="table-head">
           <tr>
-            <th>商品番号</th>
-            <th>商品名</th>
-            <th>著者</th>
-            <th>個数</th>
-            <th>種類</th>
-            <th>ジャンル</th>
-            <th>出版社</th>
+            <th><%= sort_link(@q, :number, "商品番号") %></th>
+            <th><%= sort_link(@q, :name, "商品名") %></th>
+            <th><%= sort_link(@q, :author, "著者") %></th>
+            <th><%= sort_link(@q, :stock, "個数") %></th>
+            <th><%= sort_link(@q, :genre_id, "種類") %></th>
+            <th><%= sort_link(@q, :code_id, "ジャンル") %></th>
+            <th><%= sort_link(@q, :publisher_id, "出版社") %></th>
             <th class="select"></th>
             <th class="select"></th>
             <th class="select"></th>

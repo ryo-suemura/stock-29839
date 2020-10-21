@@ -1,6 +1,7 @@
 class StocksController < ApplicationController
   def index
-    @stocks = Stock.all
+    @q = Stock.ransack(params[:q])
+    @stocks = @q.result(distinct: true)
   end
 
   def new 

@@ -9,9 +9,9 @@
                 <td><%= stock.genre.name %></td>
                 <td><%= stock.code.name %></td>
                 <td><%= stock.publisher.name %></td>
-                <td class="select-btn"><%= link_to '編集',  method: :delete %></td> 
-                <td class="select-btn"><%= link_to '購入', new_stock_purchase_path(stock.id) %></td> 
-                <td class="select-btn"><%= link_to '発注', new_stock_order_path(stock.id) %></td> 
+                <td class="select-btn"><%= link_to '編集', '', class: "btn" %></td> 
+                <td class="select-btn"><%= link_to '購入', new_stock_purchase_path(stock.id), class:"btn" %></td> 
+                <td class="select-btn"><%= link_to '発注', new_stock_order_path(stock.id), class:"btn" %></td> 
               </tr>
             </tbody>
           <% end %>
