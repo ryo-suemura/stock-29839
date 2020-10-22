@@ -1,9 +1,14 @@
-<div class="contents row">
-  <div class="container">
-    <h3>発注する数</h3>
-    <%= form_with model: @purchases, url:stock_orders_path, local: true do |form| %>
-      <%= form.number_field :quantity, min: 1 %>
-      <%= form.submit "発注する" %>
-    <% end %>
+<div class="wrapper">
+  <div class= "header-bar">
+    <%= render "stocks/header_bar" %>
+  </div>
+  <div class="contents row">
+    <div class="container">
+      <h3>発注する数</h3>
+      <%= form_with model: @stocks, url:stock_orders_path, local: true do |form| %>
+        <%= form.number_field :quantity, min: 1 %>
+        <%= form.submit "発注する" %>
+      <% end %>
+    </div>
   </div>
 </div>

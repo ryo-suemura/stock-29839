@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class= "header-bar">
+    <%= render "stocks/header_bar" %>
+  </div>
+   <div class="main-bar">
+    <div class="stock-content">
+      <div class="stock-name">
+        <h1>商品在庫一覧</h1>
+      </div>
+      </div>
+      <table>
+        <thead class="table-head">
+          <tr>
+            <th>商品番号</th>
+            <th>商品名</th>
+            <th>著者</th>
+            <th>個数</th>
+            <th>書籍分類</th>
+            <th>ジャンル</th>
+            <th>出版社</th>
+            <th>発注者</th>
+            <th>発注日時</th>
+          </tr>
+        </thead>
+          <% @orders.each do |order| %>
+            <tbody class="table-body">
+              <tr>
+                <td><%= order.stock.number %></td>
+                <td><%= order.stock.name %></td>
+                <td><%= order.stock.author %></td>
+                <td><%= order.stock.stock %></td>
+                <td><%= order.stock.genre.name %></td>
+                <td><%= order.stock.code.name %></td>
+                <td><%= order.stock.publisher.name %></td>
+                <td><%= order.user.name %></td>
+                <td><%= order.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+              </tr>
+            </tbody>
+          <% end %>
+        </table>
+    </div>
+  </div>
+</div>
