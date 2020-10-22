@@ -1,4 +1,3 @@
-<div class="wrapper">
   <div class= "header-bar">
     <%= render "stocks/header_bar" %>
   </div>
@@ -6,9 +5,8 @@
     <div class="container">
       <h3>発注する数</h3>
       <%= form_with model: @stocks, url:stock_orders_path, local: true do |form| %>
-        <%= form.number_field :quantity, min: 1 %>
-        <%= form.submit "発注する" %>
+        <%= form.number_field :quantity, min: 1, class: "order-form" %>
+        <%= form.submit "発注" %>
       <% end %>
     </div>
   </div>
-</div>
