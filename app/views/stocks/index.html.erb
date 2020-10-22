@@ -5,7 +5,7 @@
   <div class="main-bar">
     <div class="stock-content">
       <div class="stock-name">
-        <h1>商品在庫一覧</h1>
+        <h1>在庫一覧</h1>
       </div>
       <div class="stock-search">
         <%= form_with url: search_stocks_path, local: true, method: :get, class: "search-form" do |form|  %>
@@ -16,13 +16,13 @@
       <table>
         <thead class="table-head">
           <tr>
-            <th><%= sort_link(@q, :number, "商品番号") %></th>
-            <th><%= sort_link(@q, :name, "商品名") %></th>
-            <th><%= sort_link(@q, :author, "著者") %></th>
-            <th><%= sort_link(@q, :stock, "個数") %></th>
-            <th><%= sort_link(@q, :genre_id, "種類") %></th>
-            <th><%= sort_link(@q, :code_id, "ジャンル") %></th>
-            <th><%= sort_link(@q, :publisher_id, "出版社") %></th>
+            <th><%= sort_link(@q, :number, "商品番号", class: "btn") %></th>
+            <th><%= sort_link(@q, :name, "商品名", class: "btn") %></th>
+            <th><%= sort_link(@q, :author, "著者", class: "btn") %></th>
+            <th><%= sort_link(@q, :stock, "個数", class: "btn") %></th>
+            <th><%= sort_link(@q, :genre_id, "種類", class: "btn") %></th>
+            <th><%= sort_link(@q, :code_id, "ジャンル", class: "btn") %></th>
+            <th><%= sort_link(@q, :publisher_id, "出版社", class: "btn") %></th>
             <th class="select"></th>
             <th class="select"></th>
             <th class="select"></th>

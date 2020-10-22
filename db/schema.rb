@@ -14,10 +14,12 @@ ActiveRecord::Schema.define(version: 2020_10_20_133550) do
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "quantity", null: false
-    t.integer "user_id", null: false
-    t.integer "stock_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "stock_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["stock_id"], name: "index_orders_on_stock_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -55,5 +57,7 @@ ActiveRecord::Schema.define(version: 2020_10_20_133550) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orders", "stocks"
+  add_foreign_key "orders", "users"
   add_foreign_key "stocks", "users"
 end

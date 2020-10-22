@@ -1,14 +1,18 @@
 class OrdersController < ApplicationController
   before_action :setting, only: [:new, :create]
- 
+
+  def index
+    @orders = Order.order('created_at DESC')
+  end
+
   def new
     @purchase = Purchase.new
   end
- 
+
   def create
-    @purchase = Purchase.create(order_params)
-    if @purchase.save
-      @stock.increment!(:stock, @purchase.quantity)
+    @order = Order.create(order_params)
+    if @order.save
+      @stock.increment!(:stock, @order.quantity)
       redirect_to root_path
     else
       render :new

@@ -1,48 +1,53 @@
-<div class="contents row">
-  <div class="container">
-    <h1>商品を追加する</h1>
-    <%#= render 'stocks/error_messages', model: f.object %> 
-      <%= form_with model: @stock, url: stocks_path, local: true do |form| %>
-      <div class="item-detail"> 
-        <div class="form-name"> 
-          商品番号
-          <span class="dispensable">必須</span>
+<div class="wrapper">
+  <div class= "header-bar">
+    <%= render "stocks/header_bar" %>
+  </div>
+  <div class="contents row">
+    <div class="container">
+      <h1>商品を追加する</h1>
+      <%#= render 'stocks/error_messages', model: f.object %> 
+        <%= form_with model: @stock, url: stocks_path, local: true do |form| %>
+        <div class="item-detail"> 
+          <div class="form-name"> 
+            商品番号
+            <span class="dispensable">必須</span>
+          </div>
+          <%= form.text_field :number, placeholder: "商品番号" %>
+          <div class="form-name"> 
+            商品名
+            <span class="dispensable">必須</span>
+          </div>
+          <%= form.text_field :name, placeholder: "商品名" %>
+          <div class="form-name"> 
+            著者
+            <span class="dispensable">必須</span>
+          </div>      
+          <%= form.text_field :author, placeholder: "著者" %>
+          <div class="form-name"> 
+            個数
+            <span class="dispensable">必須</span>
+          </div>      
+          <%= form.number_field :stock, placeholder: "個数", min: 0 %>
         </div>
-        <%= form.text_field :number, placeholder: "商品番号" %>
-        <div class="form-name"> 
-          商品名
-          <span class="dispensable">必須</span>
+        <div class="item-detail">
+          <div class="form-name"> 
+            種類
+            <span class="dispensable">必須</span>
+          </div>       
+          <%= form.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box"}) %>
+          <div class="form-name"> 
+            ジャンル
+            <span class="dispensable">必須</span>
+          </div>      
+          <%= form.collection_select(:code_id, Code.all, :id, :name, {}, {class:"select-box"}) %>
+          <div class="form-name"> 
+            出版社
+            <span class="dispensable">必須</span>
+          </div>      
+          <%= form.collection_select(:publisher_id, Publisher.all, :id, :name, {}, {class:"select-box"}) %>
         </div>
-        <%= form.text_field :name, placeholder: "商品名" %>
-        <div class="form-name"> 
-          著者
-          <span class="dispensable">必須</span>
-        </div>      
-        <%= form.text_field :author, placeholder: "著者" %>
-        <div class="form-name"> 
-          個数
-          <span class="dispensable">必須</span>
-        </div>      
-        <%= form.number_field :stock, placeholder: "個数", min: 0 %>
-      </div>
-      <div class="item-detail">
-        <div class="form-name"> 
-          種類
-          <span class="dispensable">必須</span>
-        </div>       
-        <%= form.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box"}) %>
-        <div class="form-name"> 
-          ジャンル
-          <span class="dispensable">必須</span>
-        </div>      
-        <%= form.collection_select(:code_id, Code.all, :id, :name, {}, {class:"select-box"}) %>
-        <div class="form-name"> 
-          出版社
-          <span class="dispensable">必須</span>
-        </div>      
-        <%= form.collection_select(:publisher_id, Publisher.all, :id, :name, {}, {class:"select-box"}) %>
-      </div>
-      <%= form.submit "追加" %>
-    <% end %>
+        <%= form.submit "追加" %>
+      <% end %>
+    </div>
   </div>
 </div>
