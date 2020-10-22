@@ -130,8 +130,8 @@ Pass: aaaaaa1
 | Column          | Type       | Option                         |
 | --------------- | ---------- | ------------------------------ |
 | quantity        | integer    | null: false                    |
-| item_id         | integer    | null: false, foreign_key: true |
-| user_id         | integer    | null: false, foreign_key: true |
+| stock           | references | null: false, foreign_key: true |
+| user            | references | null: false, foreign_key: true |
 
 ## Association
 
