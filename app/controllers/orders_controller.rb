@@ -2,13 +2,13 @@ class OrdersController < ApplicationController
   before_action :setting, only: [:new, :create]
 
   def index
-    @orders = Order.order("created_at DESC")
+    @orders = Order.order('created_at DESC')
   end
- 
+
   def new
     @purchase = Purchase.new
   end
- 
+
   def create
     @order = Order.create(order_params)
     if @order.save

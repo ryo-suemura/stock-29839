@@ -1,10 +1,10 @@
 class PurchasesController < ApplicationController
   before_action :setting, only: [:new, :create]
- 
+
   def new
     @purchase = Purchase.new
   end
- 
+
   def create
     @purchase = Purchase.create(purchase_params)
     if @purchase.save && @stock.stock > 0

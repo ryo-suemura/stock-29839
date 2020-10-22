@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
-
   def edit
   end
 
   def update
-    if current_user.update(user_params) #ユーザー情報を更新
+    if current_user.update(user_params) # ユーザー情報を更新
       redirect_to root_path
     else
       render :edit
@@ -16,5 +15,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password)
   end
-
 end

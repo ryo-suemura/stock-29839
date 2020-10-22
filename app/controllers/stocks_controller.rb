@@ -4,7 +4,7 @@ class StocksController < ApplicationController
     @stocks = @q.result(distinct: true)
   end
 
-  def new 
+  def new
     @stock = Stock.new
   end
 
@@ -22,6 +22,7 @@ class StocksController < ApplicationController
   end
 
   private
+
   def stock_params
     params.require(:stock).permit(:number, :name, :author, :stock, :genre_id, :code_id, :publisher_id).merge(user_id: current_user.id)
   end
