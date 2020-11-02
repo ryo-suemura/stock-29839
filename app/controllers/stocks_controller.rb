@@ -17,6 +17,20 @@ class StocksController < ApplicationController
     end
   end
 
+  def edit
+    @stock = Stock.find(params[:id])
+  end
+
+  def update
+    @stock = Stock.find(params[:id])
+    if @stock.update(stock_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+
+  end
+
   def search
     @stocks = Stock.search(params[:keyword])
   end
