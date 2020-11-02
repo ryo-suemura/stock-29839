@@ -17,6 +17,10 @@ class StocksController < ApplicationController
     end
   end
 
+  def edit
+    @stock = Stock.find(params[:id])
+  end
+
   def search
     @stocks = Stock.search(params[:keyword])
   end
