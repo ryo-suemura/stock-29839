@@ -26,7 +26,7 @@ basic認証
 ID: minimal
 Pass: 0508
 
-ログイン(ユーザー名はa)
+ログイン(ユーザー名はA)
 Email: a@a.com
 Pass: aaaaaa1
 
