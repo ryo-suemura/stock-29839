@@ -12,5 +12,5 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  get 'orders', to: 'orders#index'
+  resources :orders, only: [:index, :destroy]
 end

@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :setting, only: [:new, :create]
+  before_action :setting, only: [:new, :create, :destroy]
 
   def index
     @orders = Order.order('created_at DESC')
@@ -16,6 +16,15 @@ class OrdersController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+  end
+
+  def destroy
+    binding.pry
+    order = Order.find(params[:id])
+    if order.destroy
+      @stock.decrement!(:stock, order.quantity)
+      redirect_to orders_path
     end
   end
 
